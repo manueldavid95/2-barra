@@ -24,13 +24,16 @@ enlace.forEach(element => {
         // lista.querySelector('.activo').classList.remove('activo')
         // element.classList.add('activo')
 
-        // cambios al menu
-        document.querySelector('.activo').classList.remove('activo')
-        element.classList.add('activo')
+        
+        
 
         if (e.target.matches(`.${element.className}`)) {
             nav.classList.remove('active')
             header.classList.remove('active')
+
+            // cambios al menu
+            document.querySelector('.activo').classList.remove('activo')
+            element.classList.add('activo')
         }
     })
 
