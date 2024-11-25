@@ -1,0 +1,158 @@
+:root {
+    --color1: #133E87;
+    --color2: #608BC1;
+    --white: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", serif;
+}
+
+i {
+    font-size: 2.8rem;
+}
+
+main {
+    margin-top: 8rem;
+}
+
+section {
+    width: 100%;
+    min-height: calc(100vh - 8rem);
+    scroll-margin: 8rem;
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 1.6rem;
+}
+
+/* estilos para el menu */
+.header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--color1);
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.342);
+    opacity: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.nav {
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: inherit;
+}
+
+.nav-mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    padding: 1.6rem;
+    transition: transform .25s;
+    transform: translateY(-100%);
+    background-color: var(--color2);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.list-link {
+    color: var(--white);
+    text-transform: capitalize;
+}
+
+.iconos {
+    color: var(--white);
+    cursor: pointer;
+}
+
+.close-menu {
+    display: none;
+}
+
+/* clases con js */
+.nav.active .nav-mobile {
+    transform: translateY(8rem);
+}
+
+.nav.active .open-menu {
+    display: none;
+}
+
+.nav.active .close-menu {
+    display: block;
+}
+
+.header.active::before {
+    opacity: 1;
+}
+
+.header.scroll {
+    border-bottom: 2px solid aquamarine;
+}
+
+/* media */
+@media screen and (min-width: 1080px){
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    .nav-mobile {
+        position: initial;
+        width: initial;
+        z-index: initial;
+        padding: initial;
+        transform: initial;
+        background-color: transparent;
+    }
+
+    .nav.active .nav-mobile {
+        transform: initial;
+    }
+
+    .header::before {
+        display: none;
+    }
+
+    .list {
+        flex-direction: row;
+        gap: 4rem;
+    }
+
+    .iconos {
+        display: none;
+    }
+}
