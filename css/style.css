@@ -92,6 +92,7 @@ section {
 .list-link {
     color: var(--white);
     text-transform: capitalize;
+    transition: color .5s;
 }
 
 .iconos {
@@ -122,6 +123,10 @@ section {
 
 .header.scroll {
     border-bottom: 2px solid aquamarine;
+}
+
+.list-link.activo {
+    color: var(--color2);
 }
 
 /* media */
